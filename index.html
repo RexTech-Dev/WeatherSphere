@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>WeatherSphere Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeButton">🌓</button>
+    </div>
+    
+    <div class="container">
+        <form class="search-bar" id="searchForm">
+            <div class="search-container">
+                <input type="search" 
+                       id="searchInput" 
+                       placeholder="🔍 Search city..." 
+                       autocomplete="off"
+                       aria-label="City search">
+                <div class="suggestions"></div>
+                <div class="search-loader"></div>
+            </div>
+        </form>
+
+        <div class="weather-card">
+            <div class="error-state">
+                <div class="error-illustration">🌧️</div>
+                <h2 class="error-title">Rain Check Needed!</h2>
+                <p class="error-message"></p>
+            </div>
+            
+            <div class="loading">🌤️ Chasing Clouds...</div>
+            
+            <div class="weather-content">
+                <div class="location"></div>
+                <div class="weather-condition"></div>
+                <i class="weather-icon"></i>
+                <div class="temperature">
+                    <span class="temp-value"></span>
+                    <span class="unit-switcher">
+                        <button class="active" data-unit="metric">°C</button>
+                        <button data-unit="imperial">°F</button>
+                    </span>
+                </div>
+                
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h3>Humidity</h3>
+                        <p class="humidity"></p>
+                    </div>
+                    <div class="detail-card">
+                        <h3>Wind Speed</h3>
+                        <p class="wind-speed"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="successSound" src="data:audio/mpeg;base64,//uQRAAAAWMSLwUIYAAsYkXgoQwAEaYLWfkWgAI0wWs/ItAAAGDgYtAgAyN+QWaAAihwMWm4G8QQRDiMcCBcH3Cc+CDv/7xA4Tvh9Rz/y8QADBwMWgQAZG/ILNAARQ4GLTcDeIIIhxGOBAuD7hOfBB3/94gcJ3w+o5/5eIAIAAAVwWgQAVQ2ORaIQwEMAJiDg95G4nQL7mQVWI6GwRcfsZAcsKkJvxgxEjzFUgfHoSQ9Qq7KNwqHwuB13MA4a1q/DmTgyMK3q/EBkiEawKKgZBE="></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
